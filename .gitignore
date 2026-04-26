@@ -1,0 +1,82 @@
+# Rust build artifacts
+target/
+**/*.rs.bk
+Cargo.lock.*
+*.pdb
+*.profraw
+*.profdata
+
+# IDE / editor
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+.zed/
+
+# OS / kernel build outputs
+out/
+build/
+build-*/
+*.o
+*.ko
+*.mod.c
+*.mod
+*.dwo
+*.cmd
+modules.order
+Module.symvers
+
+# Container and VM images
+*.img
+*.iso
+*.qcow2
+*.tar.gz
+android-runtime/aosp-build/
+android-runtime/waydroid-image/
+
+# Secrets (never commit)
+*.pem
+*.key
+*.gpg
+*.kbx
+secrets/
+.env
+.env.*
+!.env.example
+
+# Test outputs
+coverage/
+*.lcov
+fuzz/artifacts/
+fuzz/corpus/
+
+# Generated docs
+docs/_book/
+docs/_site/
+docs/_build/
+
+# SBOM / signing artifacts (regenerated, not source-of-truth)
+sbom/*.json
+sbom/*.spdx
+sbom/*.cdx.xml
+*.sig
+*.intoto.jsonl
+
+# Vendored upstream we don't track
+third_party/*/
+!third_party/README.md
+!third_party/.gitkeep
+
+# Reference-device proprietary blobs
+reference-devices/*/proprietary/
+reference-devices/*/firmware/
+
+# Misc
+*.log
+*.tmp
+node_modules/
+__pycache__/
+*.pyc

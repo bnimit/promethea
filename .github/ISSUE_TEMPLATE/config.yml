@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/prometheus-os/prometheus/security/advisories/new
+    about: Report security issues privately. Do not file them as public issues.
+  - name: Discussion / questions
+    url: https://github.com/prometheus-os/prometheus/discussions
+    about: For general questions, design discussions, and pre-RFC brainstorming.
+  - name: RFC process
+    url: ../../docs/rfcs/0000-template/README.md
+    about: For substantial changes that need a formal proposal.

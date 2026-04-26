@@ -1,0 +1,95 @@
+# CODEOWNERS — path-based reviewer requirements
+#
+# Syntax: GitHub CODEOWNERS. Each line specifies a path pattern and the
+# GitHub usernames or team handles who must review changes to that path.
+# The last matching pattern takes precedence.
+#
+# Per GOVERNANCE.md merge policy:
+#   - Security-critical paths require 2 of 3 reviewers from at least 2
+#     distinct organizations.
+#   - Other code paths require 1 maintainer + 1 contributor (or 2 maintainers).
+#   - RFC, governance, license, and CODEOWNERS changes require RFC + Board.
+#
+# Maintainer placeholders below will be replaced with real handles as
+# Phase 0 hires land. Until then, CODEOWNERS is enforced "best-effort" via
+# the @promethea-os/maintainers team.
+
+# Default owner — every file requires at least one maintainer review.
+*                               @promethea-os/maintainers
+
+# ---------------------------------------------------------------------------
+# Security-critical paths — 2-of-3 reviewers from 2+ distinct organizations
+# enforced via branch protection rules in GitHub settings.
+# ---------------------------------------------------------------------------
+
+/services/privacy/              @promethea-os/privacy-leads @promethea-os/security-reviewers
+/services/ota/                  @promethea-os/ota-leads     @promethea-os/security-reviewers
+/services/push/                 @promethea-os/push-leads    @promethea-os/security-reviewers
+/services/telemetry/            @promethea-os/privacy-leads @promethea-os/security-reviewers
+/services/compliance/           @promethea-os/privacy-leads @promethea-os/security-reviewers
+/kernel/                        @promethea-os/kernel-leads  @promethea-os/security-reviewers
+/kernel-modules/                @promethea-os/kernel-leads  @promethea-os/security-reviewers
+/ipc/                           @promethea-os/ipc-leads     @promethea-os/security-reviewers
+/init/                          @promethea-os/ipc-leads     @promethea-os/security-reviewers
+
+# ---------------------------------------------------------------------------
+# Userspace and frameworks
+# ---------------------------------------------------------------------------
+
+/compositor/                    @promethea-os/compositor-leads
+/shell/                         @promethea-os/compositor-leads
+/frameworks/app-sdk/            @promethea-os/app-sdk-leads
+/frameworks/identity/           @promethea-os/identity-leads
+/frameworks/payment/            @promethea-os/payment-leads
+/frameworks/language/           @promethea-os/language-leads
+/apps/                          @promethea-os/app-sdk-leads
+/services/mdm/                  @promethea-os/mdm-leads
+/android-runtime/               @promethea-os/android-runtime-leads
+
+# ---------------------------------------------------------------------------
+# Regional and vertical variants — regional leads required.
+# ---------------------------------------------------------------------------
+
+/regions/eu/                    @promethea-os/region-eu-leads
+/regions/in/                    @promethea-os/region-in-leads
+/regions/global/                @promethea-os/region-global-leads
+/verticals/consumer/            @promethea-os/vertical-consumer-leads
+/verticals/retail/              @promethea-os/vertical-retail-leads
+/verticals/embedded/            @promethea-os/vertical-embedded-leads
+/verticals/defense/             @promethea-os/vertical-defense-leads
+
+# ---------------------------------------------------------------------------
+# R&D and reference platforms
+# ---------------------------------------------------------------------------
+
+/microkernel/                   @promethea-os/microkernel-leads
+/reference-devices/             @promethea-os/bsp-leads
+
+# ---------------------------------------------------------------------------
+# Infrastructure
+# ---------------------------------------------------------------------------
+
+/tools/                         @promethea-os/tools-leads
+/ci/                            @promethea-os/ci-leads
+/.github/                       @promethea-os/maintainers @promethea-os/ci-leads
+
+# ---------------------------------------------------------------------------
+# Governance, license, and security-policy files — RFC + Board required.
+# CODEOWNERS here ensures the right humans are pinged; merge requires RFC.
+# ---------------------------------------------------------------------------
+
+/GOVERNANCE.md                  @promethea-os/board
+/CODE_OF_CONDUCT.md             @promethea-os/board @promethea-os/coc-committee
+/SECURITY.md                    @promethea-os/board @promethea-os/security-reviewers
+/MAINTAINERS.md                 @promethea-os/board
+/CODEOWNERS                     @promethea-os/board
+/LICENSE                        @promethea-os/board
+/NOTICE                         @promethea-os/board
+
+# Documentation
+/docs/rfcs/                     @promethea-os/maintainers
+/docs/architecture/             @promethea-os/maintainers
+/docs/threat-models/            @promethea-os/security-reviewers
+/docs/research/                 @promethea-os/maintainers
+/docs/roadmaps/                 @promethea-os/maintainers
+/docs/superpowers/              @promethea-os/board
